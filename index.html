@@ -12,6 +12,7 @@
 </head>
 <body>
     <div class="header">
+        <div id="header__link"></div>
         <div class="grid wide">
             <div class="row">
               <div class="col l-12 m-12 c-12">
@@ -368,6 +369,8 @@
                 </ul>
         </div>
     </div>
+ 
+        <a href="#header__link"> <div class="to__top">  <i class="fas fa-chevron-up"></i> </div> </a>
     <script>
         var allChagne = document.querySelector(".change__background")
         var burgerChagne = document.querySelector(".change__background-2")
@@ -429,5 +432,43 @@
              menu.addEventListener("click",showModal)
              modalClose.addEventListener("click",hideModal)
     </script>
+
+   <script>
+       var toTop = document.querySelector(".to__top")
+       window.addEventListener("scroll",() => { 
+         if (window.pageYOffset > 100){
+             toTop.classList.add("active")
+         }else {
+             toTop.classList.remove("active")
+         }
+       })
+   </script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  // Add smooth scrolling to all links
+  $("a").on('click', function(event) {
+
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 800, function(){
+
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+});
+</script>
 </body>
 </html>
