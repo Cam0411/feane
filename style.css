@@ -405,6 +405,7 @@
     outline: none;
     padding: 10px 14px;
     cursor: pointer;
+    -webkit-appearance: none;
 }
 .contact__submit 
 {
