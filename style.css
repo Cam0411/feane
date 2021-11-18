@@ -628,7 +628,13 @@ iframe
 {
     color: #ffbe33;
 }
-
+input[type="date"]
+{
+    display:block;
+    /* Solution 1 */
+     -webkit-appearance: textfield;
+    -moz-appearance: textfield;
+}
 @keyframes fadeRight {
     from {
         transform: translateX(-100px);
